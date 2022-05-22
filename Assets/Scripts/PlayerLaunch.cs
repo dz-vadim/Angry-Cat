@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ public class PlayerLaunch : MonoBehaviour
     void Start()
     {
         rb2d.isKinematic = true;
+        dragPoint.SetActive(false);
     }
     private void OnMouseDown()
     {
@@ -57,5 +59,14 @@ public class PlayerLaunch : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Finish"))
+        {
+            // Destroy(gameObject);
+            gameObject.SetActive(false);
+        }
     }
 }
