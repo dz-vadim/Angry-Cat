@@ -11,7 +11,7 @@ public class PlayerLaunch : MonoBehaviour
     private Rigidbody2D rb2d;
     private Camera mainCamera;
     private Vector2 startPosition;
-    private bool canDrag;
+    public static bool canDrag;
 
     private void Awake()
     {

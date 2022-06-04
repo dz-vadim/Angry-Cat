@@ -23,6 +23,9 @@ TextureImporter:
   - first:
       213: 999777667971362982
     second: Obstacle_6
+  - first:
+      213: 6196139333297913623
+    second: Obstacle_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -878,6 +881,27 @@ TextureImporter:
         boneIndex[1]: 0
         boneIndex[2]: 0
         boneIndex[3]: 0
+    - serializedVersion: 2
+      name: Obstacle_7
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 29
+        width: 131
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f3c0425eb1df550800000000000000
+      internalID: 6196139333297913623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
