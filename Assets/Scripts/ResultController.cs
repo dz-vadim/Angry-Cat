@@ -63,10 +63,47 @@ public class ResultController : MonoBehaviour
         gameInterface.SetActive(false);
         //виводимо результати в панель
         allTimeText.text = string.Format("Time: {0:N1}", _currentLevelTime);
+        if (stars > loadStars)
+        {
+            int levelIndex = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt($"Level{levelIndex}", levelIndex);
+            starText.text = $"Stars: {stars}";
+            interfaceButtons[0].SetActive(false);
+            interfaceButtons[1].SetActive(true);
+        }
+        else
+        {
+            starText.text = $"SLOW!";
+            interfaceButtons[0].SetActive(true);
+            interfaceButtons[1].SetActive(false);
+        }
     }
+
+    public void RestartLevel()
+    {
+        int levelIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(levelIndex);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Continue()
+    {
+        int levelIndex = SceneManager.GetActiveScene().buildIndex;
+        int allLevels = SceneManager.sceneCountInBuildSettings;
+        if (levelIndex < allLevels)
+        {
+            SceneManager.LoadScene(levelIndex + 1);
+        }
+    }
+    
     void Start()
     {
-        
+        LoadResult();
+        resultPanel.SetActive(false);
     }
 
     void Update()
